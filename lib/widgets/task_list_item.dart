@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import '../models/task_model.dart';
-
+// A stateless widget representing a single task item in the task list.
 class TaskListItem extends StatelessWidget {
-  final Task task;
-  final VoidCallback onUpdate;
-  final VoidCallback onDelete;
-
+  final Task task;// Task object to display its details.
+  final VoidCallback onUpdate;  // Callback function for updating the task.
+  final VoidCallback onDelete;  // Callback function for deleting the task.
+  // Constructor to initialize the required parameters.
   TaskListItem({required this.task, required this.onUpdate, required this.onDelete});
 
   @override
@@ -23,6 +23,7 @@ class TaskListItem extends StatelessWidget {
               ),
               child: IconButton(icon: Icon(Icons.edit,color: Colors.white,), onPressed: onUpdate)),
           SizedBox(width: 10,),
+          // Delete button wrapped inside a style container.
           Container(
               width: 40,height: 42,
               decoration: BoxDecoration(

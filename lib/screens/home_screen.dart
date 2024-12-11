@@ -10,8 +10,10 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  // Index of the currently selected tab in the BottomNavigationBar
   int _currentIndex = 0;
 
+  // List of widgets corresponding to each tab
   final List<Widget> _tabs = [
     TaskListScreen(),
     SearchScreen(),
@@ -33,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
-
+// Method to show the add task form as a modal bottom sheet
   void _showAddTaskForm() {
     showModalBottomSheet(backgroundColor: Colors.black87,
       context: context,

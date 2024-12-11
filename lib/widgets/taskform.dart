@@ -11,9 +11,11 @@ class TaskForm extends StatefulWidget {
 }
 
 class _TaskFormState extends State<TaskForm> {
-  final _formKey = GlobalKey<FormState>();
-  String _title = '';
-  String _description = '';
+  final _formKey = GlobalKey<FormState>();  //key to manage the form state
+  String _title = '';   // this is the variable to store task title
+  String _description = ''; //this is the variable to store task description
+
+  // this is the Method to validate and submit the form
 
   void _submitForm() {
     if (_formKey.currentState!.validate()) {
@@ -49,6 +51,8 @@ class _TaskFormState extends State<TaskForm> {
               validator: (value) => value!.isEmpty ? 'Enter a title' : null,
               onSaved: (value) => _title = value!,
             ),
+
+            // this is the textfield to entering the task description
             TextFormField(
               decoration: InputDecoration(
                 labelText: 'Task Description',
@@ -67,6 +71,8 @@ class _TaskFormState extends State<TaskForm> {
               onSaved: (value) => _description = value!,
             ),
             SizedBox(height: 16),
+
+            // this elevated button is used to trigger froms submission
             ElevatedButton(
               onPressed: _submitForm,
               child: Text('Add Task'),
